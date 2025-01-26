@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Background</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at var(--x, 50%) var(--y, 50%),#b9a377, #2b1700,#d1b57b);
+      transition: background 0.2s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    document.body.addEventListener('mousemove', (e) => {
+      document.body.style.setProperty('--x', `${e.clientX}px`);
+      document.body.style.setProperty('--y', `${e.clientY}px`);
+    });
+  </script>
+</body>
+</html>
